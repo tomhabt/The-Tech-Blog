@@ -1,20 +1,23 @@
 
 <form class="signup-form">
-    <h1>Signup</h1>
-  <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
+    <div class="title">
+      <h2>Signup</h2>
+  </div >
+  <div class="user-input-field-section">
+    <label for="username-signup" id="signup-label">Username:</label>
+    <input type="text" id="username-signup-input" />
   </div>
-  
-  <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
+  <div class="user-input-field-section">
+    <label for="password-signup" id="signup-label">Password:</label>
+    <input type="password" id="password-signup-input" />
   </div>
-  <div>
-    <button type="submit">signup</button>
+  <div class="signup-btn">
+    <button id="signup-btn">Signup!</button>
+  </div>
+  <div class="user-input-field-section">
+    <a class="login-choice" href="/login">Login instead</a>
   </div>
 </form>
 
-<a href="/login">sign in instead</a>
 
 <script src="/js/signup.js"></script>

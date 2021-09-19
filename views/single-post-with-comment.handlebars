@@ -1,0 +1,13 @@
+{{> post-top-section post.comments}}
+
+  {{#each this}}
+  <section class="comment">
+    <div>
+      {{comment_text}}
+    </div>
+     <br>
+     <div>
+      ---{{user.username}}, {{format_date created_at}}
+    </div>
+  </section>
+  {{/each}}

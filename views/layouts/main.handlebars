@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title >The Tech Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -13,27 +13,24 @@
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/dashboard">DashBoard</a></li>
-          
+           <button id="dashboard" class="dashboard-btn"><a href="/dashboard/"> Dashboard</a></button>
             {{#if loggedIn}}
-<<<<<<< HEAD
-
-            <button id="logout" class="btn-no-style">logout</button>
-            
-=======
-            <button id="logout" class="btn-no-style">logout</button>
->>>>>>> feature/models
+            <button id="logout" class="logout-btn">logout</button>
             {{else}}
-            <li><a href="/login">login</a></li>
-            <li><a href="/">Logout</a></li>
-            {{!-- <button id="logout" class="btn-no-style">logout</button> --}}
+          <button id="login" class="login-btn"> <a href="/login" >Login</a></button>
             {{/if}}
           
         </ul>
       </nav>
-      <h1>
+      {{#if loggedIn}}
+      <h1 >
+        Your Dashboard
+      </h1>
+      {{else}}
+      <h1 id="main-title">
         The Tech Blog
       </h1>
+      {{/if}}
     </header>
 
     
@@ -44,6 +41,8 @@
   </div>
   {{#if loggedIn}}
 <script src="/js/logout.js"></script>
+<script src="/js/login.js"></script>
+<script src="/js/title_change.js"></script>
 {{/if}}
 </body>
 

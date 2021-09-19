@@ -8,8 +8,8 @@ async function logout() {
       document.location.replace('/');
     } else {
       document.location.replace('/');
-    }
-  }
+    };
+  };
   
   document.querySelector('#logout').addEventListener('click', logout);
   
