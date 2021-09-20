@@ -3,8 +3,14 @@ const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// GET all posts route to home page
+
+// login page route
 router.get('/', (req, res) => {
+  res.render('login');
+});
+
+// GET all posts route to home page
+router.get('/home', (req, res) => {
   console.log('======================');
   // console.log(req.session);
     Post.findAll({
@@ -31,12 +37,17 @@ router.get('/', (req, res) => {
           ]
         })
         .then(dbPostData => {
-         
+          console.log(dbPostData)
+         if (req.session.loggedIn) {
+          res.redirect('/login/')
+          return;
+         }
             console.log(dbPostData[0].get({plain:true}));
           // pass a multipe post object into the homepage template
           const postsArr =  dbPostData.map(post => post.get({plain:true}))
           // console.log(postsArr);
           res.render('homepage', {postsArr, loggedIn: req.session.loggedIn});
+          
         })
         .catch(err => {
           console.log(err);
