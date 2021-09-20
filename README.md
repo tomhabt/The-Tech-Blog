@@ -1,6 +1,7 @@
 
 # MVC-Tech-Blog
 
+Website link: https://the-tech-blog-web.herokuapp.com/
 Repository: https://github.com/tomhabt/The-Tech-Blog.git
 
 ## Description
@@ -45,7 +46,7 @@ MySQL
 
 ## Usage
 
-Follow the website link: 
+Follow the website link: https://the-tech-blog-web.herokuapp.com/
 Follow the Repo: https://github.com/tomhabt/The-Tech-Blog.git
 
 ## License
