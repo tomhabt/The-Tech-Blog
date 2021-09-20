@@ -1,21 +1,21 @@
-
-
 {{#each postsArr }}
+
     <article class="post">
       <div class="title">
-        <a href="/post/{{post.id}}">
+        <a href="/dashboard/">
           <h2>{{post_title}}</h2>
         </a>
         <span>Posted by {{user.username}} on
         {{format_date created_at}}
         |
-        <a href="/post/{{post.id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a></span>
+        <a href="/posts/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a></span>
       </div>
       <div class="content">
         <p>{{post_content}}</p>
       </div>
     </article>
-    {{/each}}
+
+{{/each}}
 
 
 

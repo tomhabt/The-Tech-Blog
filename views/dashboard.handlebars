@@ -1,5 +1,5 @@
 
-{{!-- {{#if posts.length}} --}}
+{{#if posts.length}}
 <section>
     {{#each posts }}
     <article class="post">
@@ -10,16 +10,16 @@
         <span>by {{user.username}} on
         {{format_date created_at}}
         |
-        <a href="/posts/{{post.id}}">{{comments.length}} {{format_plural "comment" post.comments.length}}</a></span>
+        <a href="/posts/{{id}}">{{comments.length}} {{format_plural "comment" post.comments.length}}</a></span>
       </div>
       <div class="content">
         <p id="pc">{{post_content}}</p>
       </div>
-      <a href="/dashboard/edit/{{id}}" class="edit-link">Edit Post</a>
+      <button> <a href="/dashboard/edit/{{id}}" class="edit-post">Update/Delete Post</a></button>
     </article>
     {{/each}}
 </section>
-{{!-- {{/if}} --}}
+{{/if}}
 <button id="new-post-btn">+ New Post</button>
 
 <script src="/js/dashboard.js"></script>

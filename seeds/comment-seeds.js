@@ -2,7 +2,7 @@ const { Comment } = require('../models');
 
 const commentData = [
   {
-    comment_text:"Five star for Bootcamp program",
+    comment_text:"Five stars for the Bootcamp program",
      post_id: 1
  }
   

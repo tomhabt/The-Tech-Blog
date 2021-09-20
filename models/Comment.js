@@ -9,13 +9,18 @@ Comment.init(
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         // define a COMMENT TITKE  column
         comment_text: {
             type: DataTypes.STRING,
             allowNull: false
-        },     
+        },   
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },  
         post_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

@@ -1,8 +1,8 @@
 async function editPostHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="post-title"]').value.trim();
-    const content = document.querySelector('textarea[name="content-area"]').value.trim();
+    const post_title = document.querySelector('#post-title-input-label').value.trim();
+    const post_content = document.querySelector('#post-content-input-label').value.trim();
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
@@ -24,4 +24,4 @@ async function editPostHandler(event) {
     };
 };
   
-document.querySelector('.edit-post-btn').addEventListener('click', editPostHandler);
+document.querySelector('.update-post-btn').addEventListener('click', editPostHandler);

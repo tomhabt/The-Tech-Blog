@@ -1,14 +1,16 @@
-
+<div class="title">
+      <h2>Previous Comments</h2>
+  </div >
 
   {{#each this}}
   <section class="comment">
-   
     <div>
-      {{comment_text}}
+      <p id="post-label"> {{comment_text}}</p>
     </div>
      <br>
      <div>
-      ---{{user.username}}, {{format_date created_at}}
+      <p id="post-label"> _____ {{user.username}} , 
+        {{format_date created_at}} </p>
     </div>
   </section>
   {{/each}}
