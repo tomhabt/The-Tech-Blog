@@ -59,6 +59,10 @@ a {
   text-decoration: none;
 }
 
+#welcome {
+  align-content: center;
+}
+
 .logout-btn,
 .login-btn,
 .submit-btn,

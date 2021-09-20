@@ -1,5 +1,5 @@
+{{#if postsArr}}
 {{#each postsArr }}
-
     <article class="post">
       <div class="title">
         <a href="/dashboard/">
@@ -16,6 +16,9 @@
     </article>
 
 {{/each}}
+{{else }}
+<h2 class="title"> Welcome to our site. There are no previous blogs & be the first to post one. </h2>
+{{/if}}
 
 
 

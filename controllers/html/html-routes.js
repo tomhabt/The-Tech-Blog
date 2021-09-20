@@ -4,13 +4,17 @@ const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-// login page route
-router.get('/', (req, res) => {
-  res.render('login');
-});
+// // login page route
+// router.get('/', (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect('/');
+//     return;
+//   }
+//   res.render('login');
+// });
 
 // GET all posts route to home page
-router.get('/home', (req, res) => {
+router.get('/', (req, res) => {
   console.log('======================');
   // console.log(req.session);
     Post.findAll({
@@ -37,16 +41,17 @@ router.get('/home', (req, res) => {
           ]
         })
         .then(dbPostData => {
-          console.log(dbPostData)
-         if (req.session.loggedIn) {
-          res.redirect('/login/')
-          return;
-         }
-            console.log(dbPostData[0].get({plain:true}));
+          if (!dbPostData) {
+            res.redirect('/dashboard/');
+            return;
+          }
+            // console.log(dbPostData.get({plain:true}));
           // pass a multipe post object into the homepage template
           const postsArr =  dbPostData.map(post => post.get({plain:true}))
           // console.log(postsArr);
+          
           res.render('homepage', {postsArr, loggedIn: req.session.loggedIn});
+          
           
         })
         .catch(err => {
@@ -200,6 +205,7 @@ router.get('/dashboard/edit/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
 
 
 module.exports = router;
